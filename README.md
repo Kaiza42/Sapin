@@ -4,4 +4,4 @@
 
 
 
-<img src="monBeauSapin.gif" alt="" style="width: 40px;>
+<img src="monBeauSapin.gif" alt="" style="width: 1000px">
