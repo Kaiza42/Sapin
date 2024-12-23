@@ -73,23 +73,20 @@ namespace MyApp
                 // j'ai mis sa car quand je toucher a saisie sa modifier le sapin pour eviter sa je la stock ailleurs 
                 int saisieTronc = saisie;
                 //Permet que un sapin de 30 etage ne se retrouve pas avec un tronc de 3 etage fixe
-                if (saisieTronc > 15)
-                {
-                    saisieTronc /= 4;
-                }
+                saisieTronc /= 4;
                 // fait le calcul pour centrer le sapin le -1 permet qu'il rentre dans le dernier etage du sapin
                 // ce calcul ma beaucoup frustrer car je n'arriver pas a avancer car je ne le trouver pas
-                Console.SetCursorPosition((consoleLargeur - 3) / 2, Console.CursorTop - 1);
+                Console.SetCursorPosition((consoleLargeur - 3) / 2, Console.CursorTop );
                 // affiche le tronc centré
-                for (int n = 0; n < saisieTronc   ; n++)
+                for (int n = 0; n < saisieTronc; n++)
                 {
-                    int largeurDernierEtage = saisie * 2 - 1;
                     // j'avais du mal a comprendre sa .. en gros si j'enleve celui ci le premier tronc seras centrer mais pas les suivant 
                     Console.SetCursorPosition((consoleLargeur - 3) / 2, Console.CursorTop);
                     //affichage du tronc
                     Console.WriteLine("|||");
                 }
             }
+            // fonction flocon
             void Flocon()
             {
                 //Boucle qui fait aparaitre le nombre de flocon max a lecran
@@ -99,23 +96,10 @@ namespace MyApp
                     int largeur = bouleDeNoel.Next(0, consoleLargeur);
                     // Permet que les flocon aparaisse sur une hauteur aléatoire
                     int hauteur = bouleDeNoel.Next(0, consoleHauteur);
-
-                    //en gros sa permet que les flocon ne touche pas les tronc 
-                    if (largeur >= (consoleLargeur - largeurTronc) / 2 && largeur < (consoleHauteur - largeurTronc) / 2 + largeurTronc &&
-                        hauteur > consoleHauteur - hauteurTronc)
-                    {
-                        //Continue fait que ils ignore le flocon qui devais aparaitre dans le tronc et passe au suivant
-                        continue;
-                    }
-                    //et du coup les autre flocon aparaisse normalement
-                    else
-                    {
-                        // Applique l'affichage random des flocon 
-                        Console.SetCursorPosition(largeur, hauteur);
-                        // Afficher le flocon
-                        Console.Write("*");
-                    }
-
+                    // Applique l'affichage random des flocon 
+                    Console.SetCursorPosition(largeur, hauteur);
+                    // Afficher le flocon
+                    Console.Write("*");
                 }
             }
             // condition que 30 seras la hauteur max du sapin 
