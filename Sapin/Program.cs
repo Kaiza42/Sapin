@@ -21,6 +21,7 @@ namespace MyApp
             int hauteurTronc = saisie / 3;
             //La fonction du sapin
             void Sapin()
+                // test
             {
                 // ce console clear sert a effacer le texte de saisie utilisateur 
                 Console.Clear();
